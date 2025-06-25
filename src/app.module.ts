@@ -30,6 +30,12 @@ import { AppService } from './app.service';
         entities: [Shape, Material],
         synchronize: true,
         autoLoadEntities: true,
+        ssl: true,
+        extra: {
+          ssl: {
+            rejectUnauthorized: false,
+          },
+        }
       }),
       inject: [ConfigService],
     }),
