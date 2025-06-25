@@ -1,4 +1,4 @@
-import { IsArray, IsString , IsNumber } from 'class-validator';
+import { IsArray, IsString, IsNumber } from 'class-validator';
 
 class MaterialDto {
   @IsString()
