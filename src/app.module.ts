@@ -12,6 +12,7 @@ import { CalculateModule } from './calculate/calculate.module';
 import { AppController } from './app.controller';
 import { MetalDataController } from './metal/MetalDataController';
 import { AppService } from './app.service';
+import { SeedService } from './seed/seed.service';
 
 @Module({
   imports: [
@@ -35,7 +36,7 @@ import { AppService } from './app.service';
           ssl: {
             rejectUnauthorized: false,
           },
-        }
+        },
       }),
       inject: [ConfigService],
     }),
@@ -45,6 +46,6 @@ import { AppService } from './app.service';
     CalculateModule,
   ],
   controllers: [AppController, MetalDataController],
-  providers: [AppService],
+  providers: [AppService, SeedService],
 })
 export class AppModule {}
