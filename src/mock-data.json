@@ -1,0 +1,39 @@
+{
+  "materials": [
+    { "id": "steel", "name": "Сталь", "density": 7850 },
+    { "id": "aluminum", "name": "Алюминий", "density": 2700 },
+    { "id": "copper", "name": "Медь", "density": 8960 },
+    { "id": "brass", "name": "Латунь", "density": 8500 },
+    { "id": "duralumin", "name": "Дюраль", "density": 2800 }
+  ],
+  "shapes": [
+    {
+      "id": "1",
+      "name": "Труба круглая",
+      "formula": "pi * (diameter - thickness) * thickness * materialLength * density / 1000000",
+      "requiredParams": ["diameter", "thickness", "materialLength"],
+      "materialIds": ["steel", "aluminum", "copper", "brass"]
+    },
+    {
+      "id": "2",
+      "name": "Уголок",
+      "formula": "(firstSide + secondSide) * thickness * materialLength * density / 1000000",
+      "requiredParams": ["firstSide", "secondSide", "thickness", "materialLength"],
+      "materialIds": ["steel", "aluminum", "brass"]
+    },
+    {
+      "id": "3",
+      "name": "Арматура/круг/пруток",
+      "formula": "pi * diameter * diameter * materialLength * density / 4000000",
+      "requiredParams": ["diameter", "materialLength"],
+      "materialIds": ["steel", "aluminum", "copper", "brass", "duralumin"]
+    },
+    {
+      "id": "4",
+      "name": "Труба профильная",
+      "formula": "(firstSide + secondSide) * 2 * thickness * materialLength * density / 1000000",
+      "requiredParams": ["firstSide", "secondSide", "thickness", "materialLength"],
+      "materialIds": ["steel", "aluminum"]
+    }
+  ]
+}
